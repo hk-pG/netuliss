@@ -4,9 +4,12 @@ export class MainScene extends Phaser.Scene {
   }
 
   init() {}
+
   preload() {}
+
   create() {
-    this.add.text(30, 50, 'Hello Phaser and Typescript(vite)');
+    this.add.text(30, 50, 'TEST');
   }
+
   update() {}
 }

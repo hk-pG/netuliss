@@ -4,7 +4,7 @@ import './game/Game';
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <h1>Phaser in React</h1>
     </>
   );
 }
