@@ -8,12 +8,21 @@ class Game extends Phaser.Game {
 }
 
 const config: Phaser.Types.Core.GameConfig = {
-  type: Phaser.CANVAS,
+  type: Phaser.AUTO,
+  parent: 'game',
   width: 800,
   height: 600,
-  parent: 'game',
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: {
+        y: 300,
+      },
+      debug: false,
+    },
+  },
   scene: [Tutorial],
   backgroundColor: '#cdcdcd',
 }
 
-new Game(config)
+export const game = new Game(config)

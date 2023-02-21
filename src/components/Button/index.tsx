@@ -7,6 +7,7 @@ export const Button: FC<ButtonProps> = (props) => {
   return (
     <div className={style.module}>
       <h1>Hello World</h1>
+      <h2>Hello World</h2>
     </div>
   );
 };
