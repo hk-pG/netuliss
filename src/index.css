@@ -1,0 +1,4 @@
+body {
+  /* unscrollable game display */
+  overflow: hidden;
+}
