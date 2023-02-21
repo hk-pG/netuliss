@@ -7,9 +7,7 @@ export class MainScene extends Phaser.Scene {
 
   preload() {}
 
-  create() {
-    this.add.text(30, 50, 'TEST');
-  }
+  create() {}
 
   update() {}
 }
