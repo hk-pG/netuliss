@@ -151,14 +151,20 @@ export class Tutorial extends Phaser.Scene {
     star: Phaser.GameObjects.GameObject,
   ) {
     if (star instanceof Phaser.Physics.Arcade.Sprite) {
+      // 画面上から消滅させる
       star.disableBody(true, true)
     }
 
+    // スコアに10点追加
     this.addScore(10)
 
     if (this.stars.countActive(true) === 0) {
       this.stars.children.iterate((child) => {
         if (child instanceof Phaser.Physics.Arcade.Sprite) {
+          /* 
+          星が全部無くなったら、
+          画面上から消滅させた星を、Y座標を0にして復活させる
+          */
           child.enableBody(true, child.x, 0, true, true)
         }
       })
@@ -185,10 +191,6 @@ export class Tutorial extends Phaser.Scene {
   }
 
   private addScore(add: number) {
-    if (add < 0) {
-      throw new Error('スコアの増加分に負の値が入力されました')
-    }
-
     this.score += add
     this.scoreText.setText(`score: ${this.score}`)
   }
@@ -200,6 +202,7 @@ export class Tutorial extends Phaser.Scene {
     this.physics.pause()
 
     if (player instanceof Phaser.Physics.Arcade.Sprite) {
+      // プレイヤーを赤色に上塗りする
       player.setTint(0xff0000)
       player.anims.play('turn')
     }
